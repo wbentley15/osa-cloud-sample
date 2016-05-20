@@ -1,4 +1,4 @@
-Active-Active - Setup lab environment
+Steps to setup an OSA lab environment using cloud instances.  Please execute the following playbooks in the order below.
 
 /lab-environment
 ansible-playbook -i hosts target-create.yml
