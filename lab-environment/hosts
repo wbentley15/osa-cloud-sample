@@ -1,0 +1,13 @@
+[localhost]
+localhost ansible_connection=local
+
+[deploy]
+162.242.210.60
+
+[os-servers]
+#010811-t01a
+#010811-t01b
+#010811-t01admin
+010811-t[01:10]a
+010811-t[01:10]b
+010811-t[01:10]admin

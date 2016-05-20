@@ -1,0 +1,1 @@
+student{{ item }}	ALL=(ALL:ALL) ALL

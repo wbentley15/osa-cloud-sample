@@ -1,0 +1,1 @@
+student{{ item }}:Op3n5t4ck:10{{ item }}:10001:Student User:/home/student{{ item }}:/bin/bash

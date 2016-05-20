@@ -1,0 +1,9 @@
+---
+# This playbook used to demo OpenStack Havanna user, role, image and volume features. 
+
+- hosts: os-servers
+  user: root
+  remote_user: root
+  sudo: yes
+  roles:
+    - create-users

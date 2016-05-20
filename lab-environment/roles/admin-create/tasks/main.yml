@@ -1,0 +1,44 @@
+---
+
+- name: Build Student01 Cloud Server
+  command: supernova iad boot --flavor 5 --image e19a734c-c7e6-443a-830c-242209c4d65d --key-name rpcv9-wb --nic net-id=a62022cc-d6d3-4ae9-91e6-f803d0e4c297 010811-t01admin
+
+- name: Build Student01 Cloud Server
+  command: supernova iad boot --flavor 5 --image e19a734c-c7e6-443a-830c-242209c4d65d --key-name rpcv9-wb --nic net-id=e8f56b46-4c2d-404a-81a0-10134625478e 010811-t02admin
+
+- name: Pausing between server creation
+  pause: minutes=10
+  
+- name: Build Student05 Cloud Server
+  command: supernova iad boot --flavor 5 --image e19a734c-c7e6-443a-830c-242209c4d65d --key-name rpcv9-wb --nic net-id=1ecbc90e-979d-4689-a1e5-dbaea201ee8f 010811-t03admin
+
+- name: Build Student07 Cloud Server
+  command: supernova iad boot --flavor 5 --image e19a734c-c7e6-443a-830c-242209c4d65d --key-name rpcv9-wb --nic net-id=fb523620-1324-47fb-b6a6-1b1a57177c67 010811-t04admin
+
+- name: Pausing between server creation
+  pause: minutes=10
+  
+- name: Build Student09 Cloud Server
+  command: supernova iad boot --flavor 5 --image e19a734c-c7e6-443a-830c-242209c4d65d --key-name rpcv9-wb --nic net-id=402c5219-4243-4519-923d-beedaec301ce 010811-t05admin
+  
+- name: Build Student11 Cloud Server
+  command: supernova iad boot --flavor 5 --image e19a734c-c7e6-443a-830c-242209c4d65d --key-name rpcv9-wb --nic net-id=4ccf64d9-2e16-47cd-a0e2-420bf07c3b42 010811-t06admin
+  
+- name: Pausing between server creation
+  pause: minutes=10
+  
+- name: Build Student13 Cloud Server
+  command: supernova iad boot --flavor 5 --image e19a734c-c7e6-443a-830c-242209c4d65d --key-name rpcv9-wb --nic net-id=06cf034f-f3e4-426e-8bbd-bdeabe0413dc 010811-t07admin
+  
+- name: Build Student15 Cloud Server
+  command: supernova iad boot --flavor 5 --image e19a734c-c7e6-443a-830c-242209c4d65d --key-name rpcv9-wb --nic net-id=626b8414-2f4b-4656-b67c-50b3815bf8ea 010811-t08admin
+  
+- name: Pausing between server creation
+  pause: minutes=10
+  
+- name: Build Student13 Cloud Server
+  command: supernova iad boot --flavor 5 --image e19a734c-c7e6-443a-830c-242209c4d65d --key-name rpcv9-wb --nic net-id=94f8c1d9-88d4-454b-bf98-8de7c5186e2d 010811-t09admin
+  
+- name: Build Student15 Cloud Server
+  command: supernova iad boot --flavor 5 --image e19a734c-c7e6-443a-830c-242209c4d65d --key-name rpcv9-wb --nic net-id=72fcc34b-827a-4e3b-8ae7-c8cf9fa55045 010811-t10admin
+  

@@ -1,0 +1,4 @@
+---
+
+- name: Build Deployment Cloud Server
+  command: supernova iad boot --flavor 7 --image e19a734c-c7e6-443a-830c-242209c4d65d --key-name rpcv9-wb --nic net-id=72fcc34b-827a-4e3b-8ae7-c8cf9fa55045 082108-deploy

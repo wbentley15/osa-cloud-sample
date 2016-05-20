@@ -1,0 +1,25 @@
+---
+
+- name: Create student group
+  command: groupadd -g 10001 student
+
+- name: Copy template students file
+  template: src=student-users.txt dest=/usr/share/student-users{{ item }}.txt
+  with_items: student_id
+  ignore_errors: yes
+  
+- name: Create student user
+  command: newusers /usr/share/student-users{{ item }}.txt
+  with_items: student_id
+  ignore_errors: yes
+  
+- name: Update sudo file permissions
+  command: chmod 0644 /etc/sudoers
+
+- name: Copy sudo file addition
+  template: src=sudo-add.txt dest=/usr/share/sudo-add{{ item }}.txt mode=0644
+  with_items: student_id
+  
+- name: Add student user to sudo file
+  shell: chdir=/usr/share cat /usr/share/sudo-add{{ item }}.txt >> /etc/sudoers
+  with_items: student_id

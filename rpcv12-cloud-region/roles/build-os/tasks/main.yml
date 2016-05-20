@@ -1,0 +1,7 @@
+---
+
+- name: Install OpenStack
+  command: chdir=/opt/openstack-ansible/playbooks openstack-ansible setup-everything.yml
+  async: 7200
+  poll: 0
+
