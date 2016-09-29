@@ -1,0 +1,6 @@
+[localhost]
+localhost ansible_connection=local
+
+[allinone]
+#010811-t01a
+010811-t[01:10]a

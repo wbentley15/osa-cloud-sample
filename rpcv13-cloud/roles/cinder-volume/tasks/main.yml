@@ -1,0 +1,7 @@
+---
+
+- name: Create Cinder physical volume
+  command: pvcreate --metadatasize 2048 /dev/xvdb -ff -y
+  
+- name: Create Cinder virtual volume
+  command: vgcreate cinder-volumes /dev/xvdb

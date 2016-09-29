@@ -1,0 +1,9 @@
+# The compute host that the ceilometer compute agent will be running on.
+metering-compute_hosts:
+  allinone:
+    ip: 172.30.238.2
+
+# The infra nodes that the central agents will be running on
+metering-infra_hosts:
+  allinone:
+    ip: 172.30.238.2
