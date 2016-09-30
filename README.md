@@ -1,7 +1,7 @@
 #Current support for OpenStack releases:
 
-Liberty	/rpcv12-cloud
-Mitaka	/rpcv13-cloud
+	Liberty	/rpcv12-cloud
+	Mitaka	/rpcv13-cloud
 
 Click here for [installation instructions](https://github.com/wbentley15/osa-cloud-sample/blob/master/instructions.txt)
 
