@@ -1,0 +1,62 @@
+Installation Instructions:
+
+!!! Make sure you have Ansible v1.6 or better installed locally already !!!
+
+# Clone lab repo
+git clone https://github.com/wbentley15/osa-cloud-sample.git
+
+# Change into the working directory
+cd osa-cloud-sample/rpcv<version number>-cloud
+
+# Review directory structure
+ls -la
+
+# Edit hosts file located in the rpcv<version number>-cloud directory
+vi hosts
+
+# Update the [allinone] value with your OpenStack server IP address
+...
+[allinone]
+<OpenStack Server IP>
+
+# Edit the following configuration files per your environment
+# Update the Node ID value with the last octet of your OpenStack server
+# example: server IP of x.x.x.2 would equal NODE_ID: 2
+vi /group_vars/allinone
+
+# Edit OSA deployment configuration files per your environment
+# This includes IP ranges, node IPs, passwords and OSA variables
+vi /roles/deploy-prep/files/*
+
+# Edit network interfaces file per your environment
+vi /roles/network-setup/templates/interfaces.txt
+
+# Update the Node ID value with the last octet of your OpenStack server
+# example: server IP of x.x.x.2 would equal NODE_ID: 2
+vi /roles/network-setup/vars/main.yml
+
+# Execute playbook to prep OpenStack server
+ansible-playbook -i hosts all.yml
+
+*************************************************************************
+Please pause here as we just rebooted the OpenStack server and it needs
+to come back online.
+
+Wait approximately 5 minutes before proceeding.
+*************************************************************************
+
+# Execute playbook to setup OSA deployment on OpenStack server
+ansible-playbook -i hosts prep_deploy.yml
+
+# Execute playbook to start the OSA deployment
+ansible-playbook -i hosts build.yml
+
+# Confirm deployment completed by reviewing the Ansible log on the OpenStack server
+# SSH to OpenStack server
+ssh <OpenStack Server IP>
+sudo su
+cat /var/log/ansible/ansible.log
+
+# If nothing fails continue to the next step.  If something did fail, please just re-execute the above playbook 
+#Open browser and connect to the OpenStack server IP
+https://<OpenStack Server IP>
